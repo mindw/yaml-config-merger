@@ -13,7 +13,7 @@ from merger.args import parse_args
 from merger import prometheus
 
 
-class Merger():
+class Merger:
     logger: Logger
     w_configmaps: watch.Watch
     prometheus_config: dict
@@ -67,7 +67,7 @@ class Merger():
                 sys.exit(1)
 
     def load_and_merge_config(self, ):
-        '''Runs over all ConfigMaps to produce final Prometheus config and saves it'''
+        """Runs over all ConfigMaps to produce final Prometheus config and saves it"""
         v1 = client.CoreV1Api()
         try:
             config_maps: client.V1ConfigMapList = v1.list_namespaced_config_map(
@@ -85,25 +85,30 @@ class Merger():
                     self.logger.info(
                         "Key `%s` in ConfigMap `%s` is a dictionary - merging",
                         key,
-                        config_map.metadata.name)
+                        config_map.metadata.name
+                    )
                     merge(
                         self.prometheus_config,
                         data_yaml,
-                        strategy=Strategy.ADDITIVE)
+                        strategy=Strategy.ADDITIVE
+                    )
                 else:
                     self.logger.info(
                         "Key `%s` in ConfigMap `%s` is not a dictionary - skipping merge",
                         key,
-                        config_map.metadata.name)
+                        config_map.metadata.name
+                    )
 
         prometheus.save_config(
             self.args.prometheus_config_file_path,
-            self.prometheus_config)
-        prometheus.reload_prometheus(self.args.prometheus_reload_url)
+            self.prometheus_config
+        )
+        if self.args.prometheus_reload_url:
+            prometheus.reload_prometheus(self.args.prometheus_reload_url)
         self.prometheus_config = {}
 
     def watch_config_maps(self, ):
-        '''Watch events on ConfigMaps with specific label and reload prometheus configuration on event'''
+        """Watch events on ConfigMaps with specific label and reload prometheus configuration on event"""
         v1 = client.CoreV1Api()
         event: client.CoreV1Event
 

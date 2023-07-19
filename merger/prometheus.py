@@ -1,11 +1,13 @@
 import requests
 import logging
 import yaml
+from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 
 def reload_prometheus(url):
-    '''Do post on Prometheus endpoint to reload it'''
-    logger = logging.getLogger(__name__)
+    """Do post on Prometheus endpoint to reload it"""
     try:
         requests.post(url=url)
     except Exception as e:
@@ -13,10 +15,8 @@ def reload_prometheus(url):
 
 
 def save_config(path, config):
-    '''Save prometheus config to file'''
-    logger = logging.getLogger(__name__)
+    """Save prometheus config to file"""
     try:
-        with open(path, 'w', encoding='utf8') as f:
-            f.write(yaml.dump(config))
+        Path(path).write_text(yaml.dump(config), encoding='utf8')
     except Exception as e:
         logger.error(e)

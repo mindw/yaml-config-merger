@@ -1,4 +1,4 @@
-from merger.merger import Merger
+from .merger import Merger
 
 if __name__ == "__main__":
     merger = Merger()

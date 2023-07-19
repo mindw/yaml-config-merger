@@ -2,7 +2,7 @@ import logging
 
 
 def setup_logger(logging_level):
-    '''Setup logging.logger'''
+    """Setup logging.logger"""
     logger = logging.getLogger(__name__)
     logger.propagate = False
     logger.setLevel(logging_level)

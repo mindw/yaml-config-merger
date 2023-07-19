@@ -1,6 +1,7 @@
 from argparse import Namespace
 from logging import Logger
 
+import kubernetes.client
 import yaml
 import sys
 import signal
@@ -8,9 +9,9 @@ import signal
 from kubernetes import client, config, watch
 from mergedeep import Strategy, merge
 
-from merger.log import setup_logger
-from merger.args import parse_args
-from merger import prometheus
+from .log import setup_logger
+from .args import parse_args
+from . import prometheus
 
 
 class Merger:
@@ -52,28 +53,31 @@ class Merger:
             if self.stop:
                 break
 
-    def load_kube_config(self, ):
+    def load_kube_config(self):
         try:
-            config.load_incluster_config()
-            self.logger.info("Incluster kubeconfig loaded")
-        except Exception as e:
-            self.logger.info(
-                "Cannot load incluster kubeconfig, trying local kubeconfigs: `%s`", e)
-            try:
-                config.load_kube_config()
-                self.logger.info("Kubeconfig loaded")
-            except Exception as e:
-                self.logger.critical("Cannot load kubeconfig")
-                sys.exit(1)
+            config.load_config()
+        except config.ConfigException as e:
+            self.logger.critical("Cannot load kubeconfig %s", e)
+            sys.exit(1)
 
-    def load_and_merge_config(self, ):
+    def load_and_merge_config(self):
         """Runs over all ConfigMaps to produce final Prometheus config and saves it"""
         v1 = client.CoreV1Api()
         try:
-            config_maps: client.V1ConfigMapList = v1.list_namespaced_config_map(
-                namespace=self.args.namespace, label_selector=self.args.label_selector, )
-        except Exception as e:
+            config_maps: client.V1ConfigMapList
+            if self.args.namespace:
+                config_maps = v1.list_namespaced_config_map(
+                    namespace=self.args.namespace,
+                    label_selector=self.args.label_selector
+                )
+            else:
+                config_maps = v1.list_config_map_for_all_namespaces(
+                    label_selector=self.args.label_selector
+                )
+        except kubernetes.client.OpenApiException as e:
             self.logger.error(e)
+            return
+
         config_map: client.V1ConfigMap
         for config_map in config_maps.items:
             # Merge data inside the ConfigMap into the final configuration
@@ -107,14 +111,22 @@ class Merger:
             prometheus.reload_prometheus(self.args.prometheus_reload_url)
         self.prometheus_config = {}
 
-    def watch_config_maps(self, ):
+    def watch_config_maps(self):
         """Watch events on ConfigMaps with specific label and reload prometheus configuration on event"""
         v1 = client.CoreV1Api()
         event: client.CoreV1Event
 
+        args = {
+            "func": v1.list_config_map_for_all_namespaces,
+            "label_selector": self.args.label_selector
+        }
+        if self.args.namespace:
+            args = {
+                "func": v1.list_namespaced_config_map,
+                "namespace": self.args.namespace,
+            } | args
         try:
-            for event in self.w_configmaps.stream(func=v1.list_namespaced_config_map, namespace=self.args.namespace,
-                                                  label_selector=self.args.label_selector):
+            for event in self.w_configmaps.stream(**args):
                 self.logger.info(
                     'Registered ConfigMap event `%s` on resource `%s` in namespace `%s`',
                     event['type'],
@@ -122,4 +134,4 @@ class Merger:
                     event['object'].metadata.namespace)
                 self.load_and_merge_config()
         except Exception as e:
-            self.logger.warn("Config map watcher exception: %s", e)
+            self.logger.warning("Config map watcher exception: %s", e)

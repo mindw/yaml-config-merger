@@ -1,3 +1,4 @@
+
 # Prometheus Config Merger
 Sidecar to merge Prometheus configuration from multiple ConfigMaps and save it to file.
 

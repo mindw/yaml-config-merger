@@ -2,3 +2,4 @@ kubernetes~=27.2.0
 mergedeep~=1.3.4
 requests~=2.31.0
 PyYAML~=6.0.1
+prometheus-client~=0.17.1

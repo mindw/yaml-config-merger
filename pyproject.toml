@@ -4,6 +4,9 @@ version = "0.2.0"
 description = ""
 authors = ["Gabi Davar <gabi@engageli.com>"]
 readme = "README.md"
+packages = [
+    { include = "merger" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -18,7 +21,7 @@ black = "^23.7.0"
 mypy = "^1.4.1"
 ruff = "^0.0.280"
 pytest = "~7.4.0"
-coverage = "~7.2.7"
+coverage = { version = "~7.2.7", extras = ["toml"] }
 pytest-asyncio = "~0.21.1"
 pytest-kubernetes = "~0.3.0"
 types-requests = "^2.31.0.2"
@@ -41,22 +44,12 @@ files = "merger/*.py"
 ignore_missing_imports = true
 check_untyped_defs = true
 
-[tool.pytest]
+[tool.pytest.ini_options]
 log_cli = true
 log_cli_level = "INFO"
 cluster_timeout = 240
 norecursedirs = "*.egg .eggs dist build docs .tox .git __pycache__"
-addopts = """
-	--strict-markers
-	--doctest-modules
-	--tb=short
-	--ignore-glob=main.py
-    --ignore-glob=./beiboot/**
-"""
 testpaths = "tests"
-pythonpath = "operator"
 
-[tool.pytest.ini_options]
-pythonpath = [
-  "."
-]
+[tool.coverage.run]
+branch = true

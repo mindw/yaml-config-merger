@@ -1,3 +1,6 @@
+[![docker-image](https://github.com/mindw/yaml-config-merger/actions/workflows/docker-image.yaml/badge.svg)](https://github.com/mindw/yaml-config-merger/actions/workflows/docker-image.yaml)
+[![CodeQL](https://github.com/mindw/yaml-config-merger/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/mindw/yaml-config-merger/actions/workflows/github-code-scanning/codeql)
+
 # Yaml Config Merger
 Sidecar to merge Yaml snippets from multiple ConfigMaps and save it to file.
 

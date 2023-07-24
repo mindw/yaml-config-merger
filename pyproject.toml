@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "prometheus-config-merger]"
+name = "yaml-config-merger"
 version = "0.2.0"
 description = ""
 authors = ["Gabi Davar <gabi@engageli.com>"]

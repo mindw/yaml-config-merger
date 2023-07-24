@@ -1,8 +1,10 @@
+# Yaml Config Merger
+Sidecar to merge Yaml snippets from multiple ConfigMaps and save it to file.
 
-# Prometheus Config Merger
-Sidecar to merge Prometheus configuration from multiple ConfigMaps and save it to file.
+Exposes metrics on (configurable) port `http://0.0.0.0:9980/`.
 
-It is supposed to run as sidecar for Prometheus.
+Originally conceived as a sidecar for Prometheus, it can be used with anything
+consuming a yaml configuration file.
 
 ## How does it work
 1. Watch the changes to configmaps with specific label.
@@ -15,17 +17,15 @@ It is supposed to run as sidecar for Prometheus.
 Setup Python environment the standard way:
 
 ```bash
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
+poetry install
 ```
 
 Run the program:
 
 ```bash
-python3 -m merger \
+poetry run python -m merger \
         --prometheus-config-file-path 'my-test-config.yaml' \
-        --label-selector='proprom-rules' \
+        --label-selector='prom-rules.yaml' \
         --namespace 'monitoring' \
         --reload-url 'http://localhost:9090/-/reload'
 ```
@@ -40,11 +40,11 @@ Here is example:
 server:
   sidecarContainers:
     prometheus-config-merger:
-      image: lirt/prometheus-config-merger:0.1.0
+      image: mindw/yaml-config-merger:0.2.0
       imagePullPolicy: IfNotPresent
       args:
       - --prometheus-config-file-path=/etc/config-prometheus/prometheus.yml
-      - --label-selector='my-org.io/prometheus-merge-config=1' \
+      - --label-selector='prom-rules' \
       - --namespace 'monitoring' \
       - --reload-url 'http://localhost:9090/-/reload'
       volumeMounts:

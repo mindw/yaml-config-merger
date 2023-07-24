@@ -31,5 +31,10 @@ def parse_args():
         default="",
         help='Namespace in which to look for ConfigMaps, default is all'
     )
+    parser.add_argument(
+        '--metrics-port',
+        default=9980,
+        help='On which port expose metrics'
+    )
     args = parser.parse_args()
     return args

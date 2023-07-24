@@ -45,7 +45,7 @@ class Merger:
         signal.signal(signal.SIGINT, self.cleanup)
         signal.signal(signal.SIGTERM, self.cleanup)
 
-        start_http_server(8000)
+        start_http_server(port=self.args.metrics_port)
 
         # The watcher stream tends to break a lot
         # because of that we need to recreate the task in loop

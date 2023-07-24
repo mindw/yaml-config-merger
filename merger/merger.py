@@ -11,7 +11,11 @@ from prometheus_client import start_http_server
 
 from .log import setup_logger
 from .args import parse_args
-from .metrics import CONFIGMAPS_LISTING, LIST_FAILURES, CONFIGMAPS_PROCESSED, MERGED_KEYS, SKIPPED_KEYS, CONFIGURATION_SAVE_FAILURES, CONFIGURATION_ASSEMBLY, RELOAD_NOTIFICATION_FAILURES, VERSION
+from .metrics import (
+    CONFIGMAPS_LISTING, LIST_FAILURES, CONFIGMAPS_PROCESSED, MERGED_KEYS,
+    SKIPPED_KEYS, CONFIGURATION_SAVE_FAILURES, CONFIGURATION_ASSEMBLY,
+    RELOAD_NOTIFICATION_FAILURES, VERSION
+)
 from . import prometheus
 from . version import version
 
@@ -95,7 +99,7 @@ class Merger:
                 # dictionary
                 for key in config_map.data:
                     data = config_map.data[key]
-                    data_yaml = yaml.safe_load(data)
+                    data_yaml = yaml.load(data, Loader=yaml.CSafeLoader)
                     if isinstance(data_yaml, dict):
                         self.logger.info(
                             "Key `%s` in ConfigMap `%s` is a dictionary - merging",

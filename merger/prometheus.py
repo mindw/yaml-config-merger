@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 
-import requests
+import urllib3
 import yaml
 
 from .metrics import CONFIGURATION_SAVE_FAILURES, RELOAD_NOTIFICATION_FAILURES
@@ -20,7 +20,7 @@ yaml.add_representer(str, multi_line_str_presenter, yaml.CDumper)
 def reload_prometheus(url):
     """Do post on Prometheus endpoint to reload it"""
     try:
-        requests.post(url=url)
+        urllib3.request(method="POST", url=url, retries=False)
     except Exception as e:
         RELOAD_NOTIFICATION_FAILURES.labels(reload_url=url).inc()
         logger.warning("POST to prometheus url failed with exception `%s`", e)

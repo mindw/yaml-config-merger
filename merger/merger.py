@@ -68,7 +68,7 @@ class Merger:
             self.logger.critical("Cannot load kubeconfig %s", e)
             sys.exit(1)
 
-    def load_and_merge_config(self):
+    def load_and_merge_config(self: "Merger"):
         """Runs over all ConfigMaps to produce final Prometheus config and saves it"""
         v1 = client.CoreV1Api()
         try:
@@ -125,7 +125,7 @@ class Merger:
             prometheus.reload_prometheus(self.args.prometheus_reload_url)
         self.prometheus_config = {}
 
-    def watch_config_maps(self):
+    def watch_config_maps(self: "Merger"):
         """Watch events on ConfigMaps with specific label and reload prometheus configuration on event"""
         v1 = client.CoreV1Api()
         event: client.CoreV1Event

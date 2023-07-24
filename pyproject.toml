@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "prometheus-config-merger]"
+version = "0.2.0"
+description = ""
+authors = ["Gabi Davar <gabi@engageli.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+kubernetes = "~27.2.0"
+mergedeep = "~1.3.4"
+requests = "~2.31.0"
+PyYAML = "~6.0.1"
+prometheus-client = "~0.17.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+mypy = "^1.4.1"
+ruff = "^0.0.280"
+pytest = "~7.4.0"
+coverage = "~7.2.7"
+pytest-asyncio = "~0.21.1"
+pytest-kubernetes = "~0.3.0"
+types-requests = "^2.31.0.2"
+types-pyyaml = "^6.0.12.11"
+
+[build-system]
+requires = ["poetry-core>=1.6.1,<2"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[tool.mypy]
+python_version = "3.11"
+files = "merger/*.py"
+ignore_missing_imports = true
+check_untyped_defs = true
+
+[tool.pytest]
+log_cli = true
+log_cli_level = "INFO"
+cluster_timeout = 240
+norecursedirs = "*.egg .eggs dist build docs .tox .git __pycache__"
+addopts = """
+	--strict-markers
+	--doctest-modules
+	--tb=short
+	--ignore-glob=main.py
+    --ignore-glob=./beiboot/**
+"""
+testpaths = "tests"
+pythonpath = "operator"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]

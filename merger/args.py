@@ -34,6 +34,7 @@ def parse_args():
     parser.add_argument(
         '--metrics-port',
         default=9980,
+        type=int,
         help='On which port expose metrics'
     )
     args = parser.parse_args()

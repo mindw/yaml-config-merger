@@ -19,7 +19,7 @@ prometheus-client = "~0.17.1"
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
 mypy = "^1.4.1"
-ruff = "^0.0.280"
+ruff = "^0.1.6"
 pytest = "~7.4.0"
 coverage = { version = "~7.3.0", extras = ["toml"] }
 pytest-asyncio = "~0.21.1"

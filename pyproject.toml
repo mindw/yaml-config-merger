@@ -22,7 +22,7 @@ mypy = "^1.4.1"
 ruff = "^0.1.11"
 pytest = "~7.4.4"
 coverage = { version = "~7.3.2", extras = ["toml"] }
-pytest-asyncio = "~0.21.1"
+pytest-asyncio = "~0.23.3"
 pytest-kubernetes = "~0.3.0"
 types-requests = "^2.31.0.2"
 types-pyyaml = "^6.0.12.11"

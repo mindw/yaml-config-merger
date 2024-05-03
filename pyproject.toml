@@ -21,7 +21,7 @@ black = "^24.4.2"
 mypy = "^1.10.0"
 ruff = "^0.4.2"
 pytest = "~7.4.4"
-coverage = { version = "~7.3.2", extras = ["toml"] }
+coverage = { version = "~7.5.0", extras = ["toml"] }
 pytest-asyncio = "~0.23.6"
 pytest-kubernetes = "~0.3.0"
 types-requests = "^2.31.0.2"

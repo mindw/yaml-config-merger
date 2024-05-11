@@ -1,26 +1,25 @@
 [tool.poetry]
 name = "yaml-config-merger"
-version = "0.2.0"
-description = ""
-authors = ["Gabi Davar <gabi@engageli.com>"]
+authors = ["Gabi Davar <grizzly.nyo@gmail.com>"]
 readme = "README.md"
-packages = [
-    { include = "merger" }
-]
+package-mode = false
+#packages = [
+#    { include = "merger" }
+#]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 kubernetes = "~29.0.0"
 mergedeep = "~1.3.4"
-urllib3 = "~2.2.1"
 PyYAML = "~6.0.1"
 prometheus-client = "~0.20.0"
+urllib3 = "~2.2.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
 mypy = "^1.10.0"
 ruff = "^0.4.3"
-pytest = "~7.4.4"
+pytest = "<8"
 coverage = { version = "~7.5.1", extras = ["toml"] }
 pytest-asyncio = "~0.23.6"
 pytest-kubernetes = "~0.3.1"
@@ -29,18 +28,18 @@ types-pyyaml = "^6.0.12.20240311"
 memray = "^1.12.0"
 
 [build-system]
-requires = ["poetry-core>=1.6.1,<2"]
+requires = ["poetry-core>=1.8.3,<2"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.mccabe]
 # Unlike Flake8, default to a complexity level of 10.
 max-complexity = 10
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 files = "merger/*.py"
 ignore_missing_imports = true
 check_untyped_defs = true

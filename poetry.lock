@@ -489,48 +489,48 @@ files = [
 
 [[package]]
 name = "memray"
-version = "1.12.0"
+version = "1.13.2"
 description = "A memory profiler for Python applications"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "memray-1.12.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:27b6ad53081b2f588485393df6498be6d07c2331435625472dc6111b265bef44"},
-    {file = "memray-1.12.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:64b4e881262c60768ddfbbf062f3861f2bd0cd04414d4ee4cf4f8834285d3d7c"},
-    {file = "memray-1.12.0-cp310-cp310-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:df79afd83b4c3b5139c7d47ca1d40f5859d7c5be38759a4a698de181414b7cd6"},
-    {file = "memray-1.12.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:28f543f5c42491e233dbcb4c87da4a890cef1634b1cd6d0746092d74dc5adcb0"},
-    {file = "memray-1.12.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9a2ad07e0a0bcf15772f7887a1739e1e0679223ee4025493e0011ef35e30aa75"},
-    {file = "memray-1.12.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:621ceb522614e0076fdec78ad4d4ef34de6eeb62f63bbdd6a27c56d5ef07bde8"},
-    {file = "memray-1.12.0-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:ff94c5471d72e616d9b80f7d5b7839b9de740088f04b2b5a13eb457d571db073"},
-    {file = "memray-1.12.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:21ec3d82f9535dd66bdad2a33aeb46ebc03801b7d9db1f4ca1c96bc96d2c6253"},
-    {file = "memray-1.12.0-cp311-cp311-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:7ab5d0d7c566fc5f9bec28276a5219b20e6b5df4cdce16e506d9eda6cbb207e1"},
-    {file = "memray-1.12.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7252b98ca98e0ce6f95ad81d161f468ce9ada12e66e64e18e8e7c3b95b203035"},
-    {file = "memray-1.12.0-cp311-cp311-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:3abf058226e72caef0d68f2e850954668305934c20d2ccfef89c3eac2ccf7a40"},
-    {file = "memray-1.12.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3236d5fbc2576847d6c40741b61f6fa2fe5b0079011c4d3843bd9fc3d0b86ba7"},
-    {file = "memray-1.12.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:df5ac32d9e4458af1a8c7d6864095c8dd3bbbad4978fead3dd2d939368b1606b"},
-    {file = "memray-1.12.0-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:22f10a95e74675ce96ae29e968a978e27b9ce466bdcaa322c15edb6ea6ff661a"},
-    {file = "memray-1.12.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:fcfe985ce1b019987258a2edb71edc07a38d96d9c0ab28a91880b1e048b68d8e"},
-    {file = "memray-1.12.0-cp312-cp312-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:ef93e74548d55533f02f7e27417f88e2606f54f5cfd58ed84e0f2d6839e4ad48"},
-    {file = "memray-1.12.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a60d2a70077f091f51d9bacb387d5f3d9db37a409ab6b071398a5b5eccffe3ec"},
-    {file = "memray-1.12.0-cp312-cp312-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:ee72ca364f65f8a74da2c16c17ffb6768331fae9a14bec955932d2a3203c389d"},
-    {file = "memray-1.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8da8a7088b7b434d77ee40c843c5a66c4c10ded711f876122fb661265a950250"},
-    {file = "memray-1.12.0-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:0a43b7ea24db0469b26dd2da6058f24bd0882fae35eaff9eb3dd572234869771"},
-    {file = "memray-1.12.0-cp37-cp37m-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:2be213607228a56ee2e9de598cd4b14aded45e19d404fba1945d2008fd4e0bb6"},
-    {file = "memray-1.12.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:a7fd3e5f614666faa380a3094ac03793ada9c69239ea4a4716e929efaa7d8ff4"},
-    {file = "memray-1.12.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:57f04aeba911dd082c7c057e79bb338449621e58ae4e885dde05b5a45d6edcac"},
-    {file = "memray-1.12.0-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:dcc2f96f7cdd0a7bbfd86dafad4e76bb6adc4f41560f474185c8722ed6e653d1"},
-    {file = "memray-1.12.0-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:d3367e3748c64797c4986fa543e784067c5de08037621f5f1e628d6fc98cefe5"},
-    {file = "memray-1.12.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:dee3eff75b6a47841fb58c909723c140e72915de24a712e1ee4c157c3e1b44af"},
-    {file = "memray-1.12.0-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:2bdbcd44e31fe27822b1920814f87c9cc305d731d38c5d32d93f5f9bfa797a9e"},
-    {file = "memray-1.12.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:702a502b8c9a2ca64a34605aa32381f94c6443ba6608a6bf877e10f94d342de9"},
-    {file = "memray-1.12.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f8031156adf4a4ab471c5b835bfa773e2d36a3bbf4338236969d8c0b9d76beda"},
-    {file = "memray-1.12.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:8e0dd3e4440c9d64e174cc9663cb6a8ccefa0f45ee967b4de3c31f1d620008e9"},
-    {file = "memray-1.12.0-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:ae2176753be2157235ad766ec662cd98f1d78de2581b30366942c696b9f8da05"},
-    {file = "memray-1.12.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:f464861ddce2d4322412f2d408b796027716a623ef67ada9e4fb95300691dd52"},
-    {file = "memray-1.12.0-cp39-cp39-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:e6760685eb69997c8684358f1070c7252929b2b0e0863ed9adf7c684dc6cdf99"},
-    {file = "memray-1.12.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:b2f39ad9fc06ddc6f9e506e05a2e4036a6678447673f9134a1827266485a124b"},
-    {file = "memray-1.12.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5693b6210c51f1e66ce33a8d6a6fb5bd84c83a3fca644244c7f417e74cc93480"},
-    {file = "memray-1.12.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:bf282a90f0f01ee419d4c184416ae22f7e26450dd80897fb7998633ffde4ffab"},
-    {file = "memray-1.12.0.tar.gz", hash = "sha256:3b61c199a60197ae6164a2b44cd828c52de24083ecc49e9ac7d6287686bd68f3"},
+    {file = "memray-1.13.2-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:a773eabc0a7dad693eec193e28027130ba1d82ffa5345143f49f4a0bdc1c6c65"},
+    {file = "memray-1.13.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:eb1c75ae62c8aea7010df4d4ec5ddf057ebe0ac6e694d852bf1c732dc6b9febc"},
+    {file = "memray-1.13.2-cp310-cp310-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:9caec18ec308d126229053d366240271cca2186f3c1941ba9cba5ab787259a4e"},
+    {file = "memray-1.13.2-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:3fa2efe628159035ae39a458de81b6f0816eced2c10d66700cf84dacbe0a3bd6"},
+    {file = "memray-1.13.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9852484e199c7111e6d571f4fef0e0360dde8f88449d9c5c8e6f1358bdb0ba10"},
+    {file = "memray-1.13.2-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:99865a5e913337abaff03627be96c1924e5bdf41d716c3f3e30a29dae0c34dbc"},
+    {file = "memray-1.13.2-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:6f59d65392d3725770c136d2773b78d90a67a84041570773fed253991adc7f7a"},
+    {file = "memray-1.13.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:b1b8d4f2bb000f526767004e065db59e403a1bf428c216576a168e54dac3f1e4"},
+    {file = "memray-1.13.2-cp311-cp311-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:5ab90162027af022b14fa03420112efee7b1dbf110591d16b442701932c95f2c"},
+    {file = "memray-1.13.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:74c076899614eaae7e5b00473980dd75fecf09c22206db49f0861e076b460793"},
+    {file = "memray-1.13.2-cp311-cp311-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:39a1dd4a2004dfaa254bc5469cddfead716001290ad18705e9a39197ee3f529d"},
+    {file = "memray-1.13.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dd3bfb4d51d36d826fdec40079e527012e167ba1a4ff0dac843749c631164ed6"},
+    {file = "memray-1.13.2-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:b295a5046b9327852b9f2010cb721317ef61b2f5ed816651d135e971ece3044d"},
+    {file = "memray-1.13.2-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:3855b81d1d8307a2209540011fb683f65854b01c92bf4fe3d34866a96bcd7fb9"},
+    {file = "memray-1.13.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:3c87b688359de63a22308bb0879693cf9c81577a3c535d4a08d4c7130ed01871"},
+    {file = "memray-1.13.2-cp312-cp312-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:f441e05dc472a1be07fbcf1217f4572d682c5814fac083523d603bc418b70f07"},
+    {file = "memray-1.13.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4b9e35f1bdebe63bb719eac3866fd07ed8b9ffc1bdcbfff3e0d29140d335b8f1"},
+    {file = "memray-1.13.2-cp312-cp312-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:7880f21a2df374d6d95004e7f55075516e57892e4ab1e77f5df65dd2ad382a86"},
+    {file = "memray-1.13.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9787b9f1a85fe29b0eb7b963201a4a608f8ec7de9b84bb72d672f2308a59cf33"},
+    {file = "memray-1.13.2-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:326acdae17de17e7632598853774a7e09ad1b72eae2d3755f88a212e17ba7813"},
+    {file = "memray-1.13.2-cp37-cp37m-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:8c7ba0bd98323c71a5f2cafa81e74d232e9d1c7437682fdf1cb8833ec2c70f08"},
+    {file = "memray-1.13.2-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:d00ba714d6f8fe32fbfdf75f2d1b6755edcd7c6835efc4a65fa58943c0b53e62"},
+    {file = "memray-1.13.2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3bef98aaf398cb7f47669808d5febdad4323050f32f6e73ec3bfc6f7c04aacb0"},
+    {file = "memray-1.13.2-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:300c3710d6ddd291d6b53402e11c0de5818223e58e21ca1d42817f36dee29b24"},
+    {file = "memray-1.13.2-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:5e63552376567283a388e67382534017909891df8500d92e2dad1ebd3762d5b1"},
+    {file = "memray-1.13.2-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:4f09742556da269712cc89a7acaaa0825db15547ac1d03490f09ba3c2bf381f3"},
+    {file = "memray-1.13.2-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:6c5595539579f3f662acf794d8ac2fd3f23d3a24c4aea893a15b307c2727c3c8"},
+    {file = "memray-1.13.2-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:60176bf3015a155233d8cfaf7a6141eedc3ce5e89231892a96e162c073fb42cd"},
+    {file = "memray-1.13.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:bfa76dce73e6ee263d254345affc8bf7d4db8f899b7af396a0f5e37899f28aac"},
+    {file = "memray-1.13.2-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:59bcb96af1a3462626575de4763c88217d9c1561d8c166c9a10f00a0c19ad8d1"},
+    {file = "memray-1.13.2-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:cdd35bf96776c27ffb326c2c4b6f9b50d9461b25f98574df98771593768eb803"},
+    {file = "memray-1.13.2-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:48449deeb65de71c0fda4ce9b539a9f35fe2634af3bcac367167903bab25cff0"},
+    {file = "memray-1.13.2-cp39-cp39-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:71021329db86e03840fe210c5a6581500a069736e6f8835b2dae9c8e6be96302"},
+    {file = "memray-1.13.2-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:db87adfbf05cec117b75cdafb7e2627d649b72f15a191e106375ee0acdd54b53"},
+    {file = "memray-1.13.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6305ea70ddd15b9897abcc6f234b8aa94d4135146381b3d68fc97ec2d8d3f7ec"},
+    {file = "memray-1.13.2-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:1f38100fedec5c318c00654864ff2e6e8b8ffdb472206047e300337c2d55bb37"},
+    {file = "memray-1.13.2.tar.gz", hash = "sha256:355803182ea4a61dcb456c4c1e765f929123fc2b6998ba44efa4ae32b763e05b"},
 ]
 
 [package.dependencies]
@@ -540,10 +540,10 @@ textual = ">=0.41.0"
 
 [package.extras]
 benchmark = ["asv"]
-dev = ["Cython", "IPython", "asv", "black", "bump2version", "check-manifest", "flake8", "furo", "greenlet", "ipython", "isort", "mypy", "pytest", "pytest-cov", "pytest-textual-snapshot", "setuptools", "sphinx", "sphinx-argparse", "towncrier"]
+dev = ["Cython", "asv", "black", "bump2version", "check-manifest", "flake8", "furo", "greenlet", "ipython", "isort", "mypy", "pytest", "pytest-cov", "pytest-textual-snapshot", "setuptools", "sphinx", "sphinx-argparse", "textual (>=0.43,!=0.65.2,!=0.66)", "towncrier"]
 docs = ["IPython", "bump2version", "furo", "sphinx", "sphinx-argparse", "towncrier"]
 lint = ["black", "check-manifest", "flake8", "isort", "mypy"]
-test = ["Cython", "greenlet", "ipython", "pytest", "pytest-cov", "pytest-textual-snapshot", "setuptools"]
+test = ["Cython", "greenlet", "ipython", "pytest", "pytest-cov", "pytest-textual-snapshot", "setuptools", "textual (>=0.43,!=0.65.2,!=0.66)"]
 
 [[package]]
 name = "mergedeep"
@@ -1075,4 +1075,4 @@ test = ["websockets"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "54dfdedf9ca3f1af61ee16ffff1eae5a68c85e884070204ccced0914967b10f5"
+content-hash = "29a51d9613a8d3460ee18a745d3e875b5ee9e498e3e3d380d8cfab3208b96aa0"

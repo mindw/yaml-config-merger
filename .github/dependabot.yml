@@ -9,7 +9,7 @@ updates:
       python-dependencies:
         # A pattern can be...
         patterns:
-        - *
+        - '*'
 - package-ecosystem: github-actions
   directory: ".github/"
   schedule:

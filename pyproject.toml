@@ -18,7 +18,7 @@ urllib3 = "~2.2.3"
 [tool.poetry.group.dev.dependencies]
 black = "^24.10.0"
 mypy = "^1.13.0"
-ruff = "^0.7.1"
+ruff = "^0.7.2"
 pytest = "<8"
 coverage = { version = "~7.6.4", extras = ["toml"] }
 pytest-asyncio = "~0.23.8"

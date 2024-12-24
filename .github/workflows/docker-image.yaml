@@ -50,7 +50,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         context: .
-        provenance: true
+        provenance: false
         platforms: linux/amd64,linux/arm64
         push: ${{ github.ref == 'refs/heads/master' }}
         tags: ${{ steps.meta.outputs.tags }}

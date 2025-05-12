@@ -18,14 +18,14 @@ urllib3 = "~2.4.0"
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
 mypy = "^1.15.0"
-ruff = "^0.11.8"
+ruff = "^0.11.9"
 pytest = "<8"
 coverage = { version = "~7.8.0", extras = ["toml"] }
 pytest-asyncio = "~0.23.8"
 pytest-kubernetes = "~0.3.1"
 types-requests = "^2.32.0.20250328"
 types-pyyaml = "^6.0.12.20250402"
-memray = "^1.17.1"
+memray = "^1.17.2"
 
 [build-system]
 requires = ["poetry-core>=1.8.3,<2"]

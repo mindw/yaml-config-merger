@@ -3,7 +3,7 @@ updates:
 - package-ecosystem: pip
   directory: "/"
   schedule:
-    interval: weekly
+    interval: monthly
   groups:
     # This is the name of your group, it will be used in PR titles and branch names
     python-dependencies:
@@ -11,6 +11,6 @@ updates:
       patterns:
       - '*'
 - package-ecosystem: github-actions
-  directory: ".github/"
+  directory: "/"
   schedule:
-    interval: weekly
+    interval: monthly

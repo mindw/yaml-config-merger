@@ -17,10 +17,10 @@ urllib3 = "~2.5.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
-mypy = "^1.16.1"
-ruff = "^0.12.1"
+mypy = "^1.17.1"
+ruff = "^0.12.7"
 pytest = "<8"
-coverage = { version = "~7.9.1", extras = ["toml"] }
+coverage = { version = "~7.10.1", extras = ["toml"] }
 pytest-asyncio = "~0.23.8"
 pytest-kubernetes = "~0.3.1"
 types-requests = "^2.32.4.20250611"
